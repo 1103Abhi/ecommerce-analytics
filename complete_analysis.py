@@ -37,7 +37,7 @@ print(f"✓ Cancelled orders: {len(df) - len(df_completed):,}")
 print(f"✓ Date range: {df['InvoiceDate'].min().date()} to {df['InvoiceDate'].max().date()}")
 
 # ============================================
-# STEP 2: CALCULATE KEY BUSINESS METRICS
+#  CALCULATE KEY BUSINESS METRICS
 # ============================================
 print("\n2️⃣  CALCULATING KEY METRICS...")
 
@@ -55,7 +55,7 @@ print(f"   Avg Order Value: ${avg_order_value:,.2f}")
 print(f"   Total Items Sold: {total_items:,}")
 
 # ============================================
-# STEP 3: PRODUCT ANALYSIS
+#  PRODUCT ANALYSIS
 # ============================================
 print("\n3️⃣  TOP 10 PRODUCTS BY REVENUE...")
 
@@ -73,7 +73,7 @@ for idx, row in product_analysis.head(10).iterrows():
     print(f"{row['ProductName']:<20} {row['TotalQuantity']:>10,} ${row['Revenue']:>14,.0f} {row['OrderCount']:>10,}")
 
 # ============================================
-# STEP 4: CATEGORY ANALYSIS
+#  CATEGORY ANALYSIS
 # ============================================
 print("\n4️⃣  CATEGORY PERFORMANCE...")
 
@@ -92,7 +92,7 @@ for idx, row in category_analysis.iterrows():
     print(f"{row['Category']:<15} ${row['Revenue']:>14,.0f} {row['Orders']:>10,} {row['Quantity']:>10,} {row['NumProducts']:>10}")
 
 # ============================================
-# STEP 5: MONTHLY TRENDS
+#  MONTHLY TRENDS
 # ============================================
 print("\n5️⃣  MONTHLY REVENUE TRENDS...")
 
@@ -111,7 +111,7 @@ for idx, row in monthly.tail(12).iterrows():
     print(f"{row['YearMonth']:<12} ${row['Revenue']:>14,.0f} {row['Orders']:>10,} {row['Customers']:>12,}")
 
 # ============================================
-# STEP 6: RFM ANALYSIS (Customer Segmentation)
+#  RFM ANALYSIS (Customer Segmentation)
 # ============================================
 print("\n6️⃣  RFM CUSTOMER SEGMENTATION...")
 
@@ -154,7 +154,7 @@ for segment in ['High Value', 'Medium Value', 'Low Value']:
     print(f"{segment:<15} ${seg_revenue:>19,.0f} {pct_revenue:>19.1f}%")
 
 # ============================================
-# STEP 7: GEOGRAPHIC ANALYSIS
+#  GEOGRAPHIC ANALYSIS
 # ============================================
 print("\n7️⃣  GEOGRAPHIC PERFORMANCE...")
 
@@ -172,7 +172,7 @@ for idx, row in geo.head(10).iterrows():
     print(f"{row['Country']:<20} ${row['Revenue']:>14,.0f} {row['Orders']:>10,} {row['Customers']:>12,}")
 
 # ============================================
-# STEP 8: CUSTOMER REPEAT ANALYSIS
+#  CUSTOMER REPEAT ANALYSIS
 # ============================================
 print("\n8️⃣  CUSTOMER REPEAT PURCHASE ANALYSIS...")
 
@@ -185,7 +185,7 @@ print(f"Repeat customers: {repeat_customers:,} ({repeat_rate:.1f}%)")
 print(f"Avg purchases per customer: {customer_orders.mean():.1f}")
 
 # ============================================
-# STEP 9: CREATE VISUALIZATIONS
+#  CREATE VISUALIZATIONS
 # ============================================
 print("\n9️⃣  CREATING VISUALIZATIONS...")
 
@@ -288,7 +288,7 @@ geo.to_csv('geographic_analysis.csv', index=False)
 print("✓ Saved: geographic_analysis.csv")
 
 # ============================================
-# STEP 11: SUMMARY & INSIGHTS
+#  SUMMARY & INSIGHTS
 # ============================================
 print("\n" + "=" * 60)
 print("KEY INSIGHTS & FINDINGS")
